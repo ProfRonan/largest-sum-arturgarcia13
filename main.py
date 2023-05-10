@@ -1,8 +1,18 @@
-"""Module with functions."""
-
-
 def largest_sum(numbers: list[int]) -> tuple[int, int]:
-    """Encontra e retorna os dois números que somados dão o maior valor."""
-    primeiro = 0  # o primeiro número da soma
-    segundo = 0  # o segundo número da soma
-    return primeiro, segundo
+    status = bool(numbers)
+    while status:
+        if len(numbers) > 1:
+            primeiro = max(numbers)
+            iMax = numbers.index(primeiro)
+            numbers.pop(iMax)
+    
+            segundo = max(numbers)
+    
+            return segundo, primeiro
+        else:
+            return None
+        
+    return None
+    
+if __name__=="__main__":
+    largest_sum([0, 0, 0, 0])
